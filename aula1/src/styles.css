@@ -1,79 +1,114 @@
+/* Reset básico */
 * {
   box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
+  margin: 0;
   padding: 0;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-h3 {
-  margin-top: 0;
-  font-size: 18px;
-}
-
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
-
-h6 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-code {
-  font-size: 1.2em;
-}
-
-ul {
-  padding-inline-start: 20px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 16px;
+  
 }
 
-.square {
-  background: white;
-  border: 1px solid #999;
+/* Container principal */
+.game {
+  display: flex;
+  gap: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Status do jogo */
+.status {
+  margin-bottom: 20px;
+  font-weight: 600;
   font-size: 24px;
-  font-weight: bold;
-  height: 60px;
-  width: 60px;
-  cursor: pointer;
+  text-align: center;
+  color: #4a4a4a;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Linha do tabuleiro */
 .board-row {
   display: flex;
 }
 
-.status {
-  margin-bottom: 10px;
+/* Quadrados */
+.square {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  border: 3px solid #667eea;
+  font-size: 32px;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.game {
-  display: flex;
-  gap: 30px;
+/* Hover */
+.square:hover {
+  background: linear-gradient(145deg, #f0f0f0, #d0d0d0);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Clique */
+.square:active {
+  transform: translateY(0) scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Área do histórico */
+.game-info {
+  min-width: 200px;
+}
+
+/* Lista de jogadas */
+.game-info ol {
+  padding-left: 25px;
+  list-style-type: decimal;
+}
+
+/* Botões do histórico */
+.game-info button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+.game-info button:hover {
+  background: linear-gradient(135deg, #5a6fd8, #6a4190);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.game-info button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
 }
